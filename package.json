@@ -14,13 +14,22 @@
     "build": "node build/build.js"
   },
   "husky": {
-    "pre-commit": "npm run unit"
+    "hooks": {
+      "pre-commit": "npm run unit"
+    }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,vue}"
+    ]
   },
   "dependencies": {
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.30",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
@@ -56,6 +65,8 @@
     "husky": "^3.1.0",
     "jest": "^22.0.4",
     "jest-serializer-vue": "^0.3.0",
+    "jsdom": "^15.2.1",
+    "jsdom-global": "^3.0.2",
     "nightwatch": "^0.9.12",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
